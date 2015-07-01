@@ -1,0 +1,3 @@
+All other input files are included here, and there is a wget inthe bash script that will download the last file. But is is available here:
+http://dublinked.com/datastore/datasets/dataset-304.php
+This is the Dublin Bus GPS data

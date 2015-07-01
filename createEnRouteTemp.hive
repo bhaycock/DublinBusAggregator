@@ -1,0 +1,10 @@
+# Not fully tested
+# In the project, the enRouteTemp table was created via a mySQL call, however,
+# the ability to carry out the same operation in HIVE is described and this is, essentially, the HIVE script to carry out that operation.
+
+# Barry Haycock
+# 2015_05_06
+
+CREATE TABLE enRouteTemp AS SELECT Timestamp, WeekDay, HourOfDay, StopID, BlockID, JourneyPatternID, LineID, Direction, TimeFrame, VehicleJourneyID, Operator, Congestion, VehicleID,
+ MIN(timestamp) AS ArriveStamp, MAX(timestamp) - MIN(timestamp) AS TimeAtStop FROM readyForHIVE GROUP BY LineID, VehicleID, VehicleJourneyID, StopID, JourneyPatternID, TimeFrame, Di
+rection ORDER BY timestamp;
