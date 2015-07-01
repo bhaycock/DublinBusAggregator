@@ -1,5 +1,5 @@
 # DublinBusAggregator
-Dublin Bus Data Aggregator
+Dublin Bus Data Aggregator. Visualisations are available at: http://tabsoft.co/1zNJhF3
 
 This submission represents an example of a "Big Data"-like pipeline. In some ways it's a lottle (more than a little, but not really a lot!) convuluted.
 GPS Data collected from the Dublin Bus transit network cataloguing the position of busses throughout the city of Dublin for the month of January is analysed using a variety of data mining techniques. This data represents the geographic position of every bus in Dublin for the entire operating period and therefore constitutes a massive data set, comprising 44M observations and totalling 4.5Gb in size.
@@ -12,6 +12,9 @@ For this project BASH scripting is used extensively, this was chosen as oppose t
 The pipeline, including downloading of the data files from dublinked.ie, is invoked by calling the runall.sh script in BASH. I *strongly* recommend that you consider that file a description of usage of the various functions in this set and not as a quick-start. 
 
 The pipeline for data processing is as follows, in bullet-point pseudo-code form, all text in the square brackets represent the names of files containing code to carry out the function, the runall.script file carries out this pipeline in order on some setups and systems:
+
+
+
 1. Programmatically download and prepare files for database [runall.script]
 1.1. Use wget to download the dataset from dublinked.ie, the google transit data and the
 screen-scraped bus routes file. These are currently hosted online.
