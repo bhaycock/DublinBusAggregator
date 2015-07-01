@@ -1,7 +1,7 @@
 # DublinBusAggregator
 Dublin Bus Data Aggregator
 
-This submission represents an example of a "Big Data"-like pipeline. In some ways it's a lottle convuluted.
+This submission represents an example of a "Big Data"-like pipeline. In some ways it's a lottle (more than a little, but not really a lot!) convuluted.
 GPS Data collected from the Dublin Bus transit network cataloguing the position of busses throughout the city of Dublin for the month of January is analysed using a variety of data mining techniques. This data represents the geographic position of every bus in Dublin for the entire operating period and therefore constitutes a massive data set, comprising 44M observations and totalling 4.5Gb in size.
 
 MapReduce design patterns are applied to the raw data to aggregate the average time spent by busses at each stop per route number. The time at the stop is aggregated by averages to hourly granularity for an average day of the week. This kind of aggregation allows for ease of addressing specific time periods and days of the week.
