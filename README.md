@@ -1,2 +1,10 @@
 # DublinBusAggregator
 Dublin Bus Data Aggregator
+
+This submission represents an example of a "Big Data"-like pipeline. In some ways it's a lottle convuluted.
+GPS Data collected from the Dublin Bus transit network cataloguing the position of busses throughout the city of Dublin for the month of January is analysed using a variety of data mining techniques. This data represents the geographic position of every bus in Dublin for the entire operating period and therefore constitutes a massive data set, comprising 44M observations and totalling 4.5Gb in size.
+
+MapReduce design patterns are applied to the raw data to aggregate the average time spent by busses at each stop per route number. The time at the stop is aggregated by averages to hourly granularity for an average day of the week. This kind of aggregation allows for ease of addressing specific time periods and days of the week.
+Results are presented by data mining output and as an interactive dashboard.
+
+For this project BASH scripting is used extensively, this was chosen as oppose to python because the BASH scripts can be run on virtually any Linux or Unix based computer, whereas python may not be installed or may not have the required libraries or access. For data storage, wget is used to gather data from original sources (a mirror is set up for this project), mySQL is used for data storage, for small-scale SQL-like queries and filtering, mySQL is also used over Hive. This is because HQL and SQL are very similar and SQL is faster for smaller queries especially when Hadoop is configured in a pseudo-distributed mode. Apaché Sqoop is used routinely to move data to the HDFS from mySQL and to return it to mySQL, finally both R and Tableau are used for final analysis. R is used because it can download required libraries from a script, including the one required for accessing a mySQL database, RmySQL. Tableau is used because it can directly access mySQL databases, once the MySQL Connector ODBC 5.3.pkg drivers are installed, and is an ideal platform to deliver a dashboard.
